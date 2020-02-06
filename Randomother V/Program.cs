@@ -127,7 +127,7 @@ namespace Randomother_V
 						catch (Exception e)
 						{
 							Interface.MakeError();
-							Console.WriteLine("! Error with parametr [" + e.ToString() + "]");
+							Console.WriteLine("! Error with parametr [" + e.ToString() + "]\r\n");
 						}
 
 					}
@@ -145,7 +145,22 @@ namespace Randomother_V
 						catch (Exception e)
 						{
 							Interface.MakeError();
-							Console.WriteLine("! Error with parametr \r\n[" + e.ToString() + "]");
+							Console.WriteLine("! Error with parametr \r\n[" + e.ToString() + "]\r\n");
+						}
+					}
+					else if (cmd.StartsWith("log")) //////////////////////////////////////////////////////////////////////////////////
+					{
+						bool status;
+						try
+						{
+							status = Convert.ToBoolean(cmd.Substring(4));
+							Log.SetStatus(status);
+							Console.WriteLine("Logging set to " + (status ? "on" : "off"));
+						}
+						catch (Exception e)
+						{
+							Interface.MakeError();
+							Console.WriteLine("! Error with parametr \r\n[" + e.ToString() + "]\r\n");
 						}
 					}
 					else if (cmd.StartsWith("log_s")) ////////////////////////////////////////////////////////////////////////////////
@@ -157,7 +172,22 @@ namespace Randomother_V
 						}
 						catch (Exception e)
 						{
-							Console.WriteLine("! Error with parametr \r\n[" + e.ToString() + "]");
+							Console.WriteLine("! Error with parametr \r\n[" + e.ToString() + "]\r\n");
+						}
+					}
+					else if (cmd.StartsWith("count")) //////////////////////////////////////////////////////////////////////////////////
+					{
+						bool status;
+						try
+						{
+							status = Convert.ToBoolean(cmd.Substring(6));
+							Count.SetStatus(status);
+							Console.WriteLine("Counter set to " + (status ? "on" : "off"));
+						}
+						catch (Exception e)
+						{
+							Interface.MakeError();
+							Console.WriteLine("! Error with parametr \r\n[" + e.ToString() + "]\r\n");
 						}
 					}
 					else if (cmd.StartsWith("count_s")) //////////////////////////////////////////////////////////////////////////////
@@ -169,7 +199,7 @@ namespace Randomother_V
 						}
 						catch (Exception e)
 						{
-							Console.WriteLine("! Error with parametr \r\n[" + e.ToString() + "]");
+							Console.WriteLine("! Error with parametr \r\n[" + e.ToString() + "]\r\n");
 							break;
 						}
 					}

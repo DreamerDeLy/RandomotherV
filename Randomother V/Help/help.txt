@@ -1,0 +1,24 @@
+Keybildings:
+[e] - Exit
+[c] - Cammand
+
+Commands:
+rn         - new random number
+rp         - new random player
+
+m_rp (n)   - generate n random players
+m_pn (n)   - ganerate n random numbers
+
+count      - show counter for layers
+count <st> - on/off (true/false) counter 
+count_c    - clear counter
+count_s    - save counter
+
+log        - log of randoms
+log <st>   - on/off (true/false) logger
+log_c      - clear log
+log_s      - save log to file
+
+screen_c   - clear screen
+
+(number) [text] <boolean>

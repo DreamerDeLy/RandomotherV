@@ -8,6 +8,8 @@ namespace Randomother_V
 {
 	class Logger
 	{
+		private bool status = true;
+
 		public string log = "";
 
 		public Logger()
@@ -21,12 +23,17 @@ namespace Randomother_V
 		/// <param name="str">String to add (without \r\n)</param>
 		public void Add(string str = "")
 		{
-			log += str + "\r\n";
+			if (status) log += str + "\r\n";
 		}
 
 		public void Clear()
 		{
 			log = "";
+		}
+
+		public void SetStatus(bool status = true)
+		{
+			this.status = status;
 		}
 	}
 }

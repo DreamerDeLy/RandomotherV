@@ -11,6 +11,8 @@ namespace Randomother_V
 		public List<int> counter = new List<int>() { 0, 0, 0, 0 };
 		public int count = 4;
 
+		private bool status = true;
+
 		public Counter(int count = 4)
 		{
 			SetCount(count);
@@ -39,12 +41,17 @@ namespace Randomother_V
 
 		public void AddCount(int player)
 		{
-			counter[player]++;
+			if (status) counter[player]++;
 		}
 
 		public void SaveToFile(string path)
 		{
 			//
+		}
+
+		public void SetStatus(bool status = true)
+		{
+			this.status = status;
 		}
 	}
 }
